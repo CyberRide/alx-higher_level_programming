@@ -8,7 +8,7 @@ def apidata():
     """apidata"""
     url = "https://api.github.com/repos/{}/{}/commits".format(sys.argv[2],
                                                               sys.argv[1])
-    result = requests.get(url)
+    result = requests.get(url, timeout=60)
     try:
         d = result.json()
         for i in range(10):

@@ -6,7 +6,7 @@ import sys
 
 def post():
     """status"""
-    result = requests.post(sys.argv[1], data={"email": sys.argv[2]})
+    result = requests.post(sys.argv[1], data={"email": sys.argv[2]}, timeout=60)
 
     print(result.text)
 

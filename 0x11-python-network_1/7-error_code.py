@@ -6,7 +6,7 @@ import sys
 
 def errorcode():
     """status"""
-    result = requests.get(sys.argv[1])
+    result = requests.get(sys.argv[1], timeout=60)
     try:
         if result.status_code > 400:
             print("Error code: {}".format(result.status_code))

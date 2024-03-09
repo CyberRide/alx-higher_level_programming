@@ -10,7 +10,7 @@ def searchapi():
     user = str(sys.argv[1])
     pw = str(sys.argv[2])
     result = requests.get("https://api.github.com/user",
-                          auth=(HTTPBasicAuth(user, pw)))
+                          auth=(HTTPBasicAuth(user, pw)), timeout=60)
 
     try:
         data = result.json()
