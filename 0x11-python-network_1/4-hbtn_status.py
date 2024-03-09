@@ -5,7 +5,7 @@ import requests
 
 def status():
     """status"""
-    result = requests.get("https://intranet.hbtn.io/status")
+    result = requests.get("https://intranet.hbtn.io/status", timeout=60)
 
     print("Body response:")
     print("\t- type: {}".format(type(result.text)))

@@ -11,7 +11,7 @@ def searchapi():
     else:
         q = sys.argv[1]
 
-    result = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
+    result = requests.post("http://0.0.0.0:5000/search_user", data={"q": q}, timeout=60)
 
     try:
         data = result.json()
